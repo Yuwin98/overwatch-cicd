@@ -25,7 +25,12 @@ def parse_script_metadata(content: str) -> Optional[Dict[str, Any]]:
     yaml_lines = []
     for line in yaml_content.split('\n'):
         if line.strip().startswith('#'):
-            yaml_lines.append(line.strip()[1:].strip())
+            # Remove the # and preserve the indentation
+            cleaned_line = line.strip()[1:]
+            if cleaned_line.startswith(' '):
+                yaml_lines.append(cleaned_line[1:])  # Remove one space after #
+            else:
+                yaml_lines.append(cleaned_line)
         elif line.strip() == '':
             yaml_lines.append('')
     

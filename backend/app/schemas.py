@@ -22,7 +22,7 @@ class ScriptResponse(BaseModel):
     description: Optional[str]
     path: str
     checksum: str
-    metadata: Optional[Dict[str, Any]]
+    script_metadata: Optional[Dict[str, Any]]  # Changed from metadata
     created_at: datetime
     updated_at: datetime
 

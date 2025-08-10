@@ -48,7 +48,7 @@ async def create_script(script: ScriptCreate, db: Session = Depends(get_db)):
         description=script.description,
         path=script_path,
         checksum=checksum,
-        metadata=metadata
+        script_metadata=metadata  # Changed from metadata
     )
     
     db.add(db_script)

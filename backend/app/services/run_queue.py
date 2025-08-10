@@ -91,7 +91,7 @@ class RunQueue:
             try:
                 with open(log_path, 'w') as log_file:
                     process = subprocess.Popen(
-                        [script.path],
+                        ['bash', script.path],  # Use bash explicitly
                         stdout=log_file,
                         stderr=subprocess.STDOUT,
                         env=env,

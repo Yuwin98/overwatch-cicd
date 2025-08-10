@@ -26,7 +26,7 @@ class Script(Base):
     description = Column(Text)
     path = Column(String, nullable=False)
     checksum = Column(String, nullable=False)
-    metadata = Column(JSON)
+    script_metadata = Column(JSON)  # Changed from metadata to script_metadata
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
